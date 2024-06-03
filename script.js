@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const WORD_LIST = ["ატომი", "წყალი", "ჰაერი", "ქიმია", "ბმული", "მჟავა", "სითხე"];
+    const WORD_LIST = ["ატომი", "წყალი", "ჰაერი", "ქიმია", "ბმული", "მჟავა", "სითხე", "ქლორი", "აზოტი"];
     const selectedWord = WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)];
     let guesses = [];
+    const maxGuesses = 6;
     let wordRevealed = false;
 
     const guessInput = document.getElementById('guess-input');
@@ -11,8 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealedWordDiv = document.getElementById('revealed-word');
 
     submitGuessButton.addEventListener('click', () => {
+        if (guesses.length >= maxGuesses || wordRevealed) {
+            return;
+        }
         const guess = guessInput.value.toLowerCase();
-        if (guess.length === 5 && !wordRevealed) {
+        if (guess.length === 5) {
             const result = [];
             for (let i = 0; i < guess.length; i++) {
                 if (guess[i] === selectedWord[i]) {
@@ -26,14 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
             guesses.push({ guess, result });
             updateResults();
             guessInput.value = '';
+            if (guesses.length >= maxGuesses) {
+                revealWord();
+            }
         }
     });
 
-    revealWordButton.addEventListener('click', () => {
+    revealWordButton.addEventListener('click', revealWord);
+
+    function revealWord() {
         wordRevealed = true;
         revealedWordDiv.textContent = `დაშიფრული სიტყვა იყო: ${selectedWord}`;
         revealedWordDiv.style.display = 'block';
-    });
+    }
 
     function updateResults() {
         resultsDiv.innerHTML = '';
