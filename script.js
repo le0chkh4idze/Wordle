@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+ocument.addEventListener('DOMContentLoaded', () => {
     const WORD_LIST = ["ატომი", "წყალი", "ჰაერი", "ქიმია", "ბმული", "მჟავა", "სითხე", "ქლორი", "აზოტი"];
     const selectedWord = WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)];
     let guesses = [];
