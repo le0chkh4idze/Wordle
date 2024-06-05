@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const WORD_LIST = ["ატომი", "წყალი", "ჰაერი", "ქიმია", "ბმული", "მჟავა", "სითხე", "ქლორი", "აზოტი", "რკინა", "ფთორი", "ნეონი", "ბრომი", "ტყვია"];
+    const WORD_LIST = ["ატომი", "წყალი", "ჰაერი", "ქიმია", "ჯგუფი", "მჟავა", "სითხე", "ქლორი", "აზოტი", "რკინა", "ფთორი", "ნეონი", "ბრომი", "ტყვია"];
     const selectedWord = WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)];
     let guesses = [];
     const maxGuesses = 6;
