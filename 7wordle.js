@@ -11,9 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { word: "ლითიუმი", hint: "მენდელეევის პერიოდული სისტემის I ჯგუფის ელემენტი."},
         { word: "ვერცხლი", hint: "მენდელეევის პერიოდული სისტემის I ჯგუფის ელემენტი."},
         { word: "ცეზიუმი", hint: "მენდელეევის პერიოდული სისტემის I ჯგუფის ელემენტი."},
-        { word: "სპილენძი", hint: "მენდელეევის პერიოდული სისტემის I ჯგუფის ელემენტი."},
-        { word: "კალიუმი", hint: "მენდელეევის პერიოდული სისტემის I ჯგუფის ელემენტი."},
-        
+        { word: "კალიუმი", hint: "მენდელეევის პერიოდული სისტემის I ჯგუფის ელემენტი."}
     ];
     const selected = WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)];
     const selectedWord = selected.word;
